@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>A Story Only We Know</title>
+    
+    <!-- Google Fonts for Romantic Luxury Aesthetics -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Stars, Constellations & Nebula -->
+    <canvas id="cosmic-canvas"></canvas>
+
+    <!-- Ambient Aurora Glow Overlays -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Mouse / Touch Interactive Starlight Glow -->
+    <div id="cursor-glow" class="cursor-glow"></div>
+
+    <!-- Audio Player & Sound Controls -->
+    <div class="audio-widget" id="audio-widget">
+        <button id="audio-toggle" class="audio-btn" aria-label="Toggle Romantic Music" title="Toggle Music">
+            <span class="music-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18V5l12-2v13"></path>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+            </span>
+            <div class="sound-wave">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <span class="bar bar-4"></span>
+            </div>
+            <span class="audio-label" id="audio-status">Sound: Off</span>
+        </button>
+        <!-- Optional fallback for custom audio file -->
+        <audio id="custom-audio" src="bg_audio.mp3" preload="auto" loop></audio>
+        <!-- Special Climax Audio for Ahsan -->
+        <audio id="special-climax-audio" src="Ahsan-song.mp3" preload="auto" loop></audio>
+    </div>
+
+    <!-- Floating Navigation Dots for quick chapter jumping -->
+    <nav class="story-nav" id="story-nav">
+        <div class="nav-dot active" data-target="scene-universe" title="Our Universe"></div>
+        <div class="nav-dot" data-target="chapter-beginning" title="The Beginning"></div>
+        <div class="nav-dot" data-target="chapter-little-things" title="Little Things"></div>
+        <div class="nav-dot" data-target="chapter-memories" title="Memories"></div>
+        <div class="nav-dot" data-target="chapter-reasons" title="Reasons"></div>
+        <div class="nav-dot" data-target="chapter-forever" title="Forever"></div>
+        <div class="nav-dot" data-target="scene-letter" title="A Letter"></div>
+        <div class="nav-dot" data-target="scene-final" title="The Climax"></div>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- SCENE 1: MYSTERIOUS INTRODUCTION          -->
+    <!-- ========================================== -->
+    <section class="scene scene-intro active" id="scene-intro">
+        <div class="intro-glass-card">
+            <div class="secret-badge">
+                <span class="sparkle-icon">✦</span>
+                <span class="badge-text">A Story Only We Know — For Ahsan</span>
+                <span class="sparkle-icon">✦</span>
+            </div>
+
+            <h1 class="intro-heading" id="intro-quote">
+                "Some feelings are too special to explain in ordinary words..."
+            </h1>
+
+            <p class="intro-subtext">
+                Put on your headphones, quiet the world around you, and step into something crafted with all my heart for you, Ahsan.
+            </p>
+
+            <button class="btn-celestial" id="btn-enter-world">
+                <span class="btn-glow-ring"></span>
+                <span class="btn-stars-layer"></span>
+                <span class="btn-content">
+                    <span class="btn-icon">✧</span>
+                    <span class="btn-text">Enter My Little World</span>
+                    <span class="btn-icon">✧</span>
+                </span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SCENE 2: CINEMATIC SUSPENSE               -->
+    <!-- ========================================== -->
+    <section class="scene scene-suspense" id="scene-suspense">
+        <div class="suspense-core">
+            <!-- Pulsing Celestial Orbital Rings -->
+            <div class="celestial-ring ring-1"></div>
+            <div class="celestial-ring ring-2"></div>
+            <div class="celestial-ring ring-3"></div>
+
+            <div class="suspense-whispers">
+                <p class="whisper whisper-1" id="whisper-1">In all of time, and across all of space...</p>
+                <p class="whisper whisper-2" id="whisper-2">Out of eight billion people on this planet...</p>
+                <p class="whisper whisper-3" id="whisper-3">My entire universe gravitated towards you.</p>
+            </div>
+
+            <!-- Ethereal Countdown / Alignment -->
+            <div class="countdown-sphere" id="countdown-sphere">
+                <div class="countdown-number" id="countdown-number">3</div>
+                <div class="countdown-subtitle" id="countdown-subtitle">Aligning our stars...</div>
+            </div>
+        </div>
+        <!-- Light Flash on Climax Transition -->
+        <div class="celestial-bloom" id="suspense-bloom"></div>
+    </section>
+
+    <!-- MAIN SCROLLABLE CONTAINER (Scenes 3, 4, 5, 6) -->
+    <main class="main-experience" id="main-experience">
+
+        <!-- ========================================== -->
+        <!-- SCENE 3: OUR LITTLE UNIVERSE              -->
+        <!-- ========================================== -->
+        <section class="scene scene-universe" id="scene-universe">
+            <div class="universe-header">
+                <div class="moon-container">
+                    <img src="moon.png" alt="Moon" class="celestial-moon" id="celestial-moon" onerror="this.style.display='none'">
+                    <div class="moon-halo"></div>
+                </div>
+
+                <div class="universe-quote-card">
+                    <div class="card-starlight-tag">✦ For Ahsan — Beyond The Stars ✦</div>
+                    <h2 class="universe-title" id="universe-main-title">
+                        <span class="recipient-name" id="display-recipient">Ahsan</span>
+                    </h2>
+                    <div class="typewriter-container">
+                        <p class="typewriter-text" id="universe-typewriter-text"></p>
+                        <span class="typing-cursor"></span>
+                    </div>
+                </div>
+
+                <!-- Interactive Floating Constellation Whispers -->
+                <div class="constellation-cluster" id="constellation-cluster">
+                    <div class="cluster-hint">✧ Tap the glowing stars to unlock whispers ✧</div>
+                    <div class="star-nodes">
+                        <button class="star-node" data-whisper="Your smile has the power to erase every worry from my day." style="--pos-x: 15%; --pos-y: 20%;" title="Star of Joy">
+                            <span class="star-sparkle">✦</span>
+                            <span class="star-name">Your Smile</span>
+                        </button>
+                        <button class="star-node" data-whisper="Your voice is my safest haven in a chaotic world." style="--pos-x: 82%; --pos-y: 28%;" title="Star of Serenity">
+                            <span class="star-sparkle">✦</span>
+                            <span class="star-name">Your Voice</span>
+                        </button>
+                        <button class="star-node" data-whisper="The way you understand my silence means more than words ever could." style="--pos-x: 22%; --pos-y: 75%;" title="Star of Understanding">
+                            <span class="star-sparkle">✦</span>
+                            <span class="star-name">Your Depth</span>
+                        </button>
+                        <button class="star-node" data-whisper="You have this rare, pure warmth that makes everything feel right." style="--pos-x: 75%; --pos-y: 78%;" title="Star of Warmth">
+                            <span class="star-sparkle">✦</span>
+                            <span class="star-name">Your Warmth</span>
+                        </button>
+                        <button class="star-node" data-whisper="Meeting you wasn't just coincidence—it felt like destiny catching up." style="--pos-x: 50%; --pos-y: 50%;" title="Star of Destiny">
+                            <span class="star-sparkle">★</span>
+                            <span class="star-name">Destiny</span>
+                        </button>
+                    </div>
+                    <!-- Whisper Display Box -->
+                    <div class="whisper-display-box" id="whisper-display">
+                        <p class="whisper-display-text" id="whisper-display-text">Select a glowing star above...</p>
+                    </div>
+                </div>
+
+                <!-- Scroll Prompt -->
+                <div class="scroll-down-hint">
+                    <span class="scroll-text">Scroll to wander through our story</span>
+                    <div class="scroll-arrow">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SCENE 4: OUR STORY (5 INTERACTIVE CHAPTERS)-->
+        <!-- ========================================== -->
+        <section class="scene scene-story" id="scene-story">
+
+            <!-- CHAPTER 1: THE BEGINNING -->
+            <div class="story-chapter" id="chapter-beginning">
+                <div class="chapter-header">
+                    <span class="chapter-numeral">Chapter I</span>
+                    <h3 class="chapter-title">The Beginning</h3>
+                    <p class="chapter-subtitle">Where ordinary days turned into something magical</p>
+                </div>
+
+                <div class="chapter-card glass-panel interactive-flip" id="card-beginning">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-ornament top-ornament">✧ ✦ ✧</div>
+                            <div class="card-tag" id="beginning-date-badge">When Our Paths Crossed</div>
+                            <h4 class="card-headline" id="beginning-headline">A Day That Changed Everything</h4>
+                            <p class="card-body-text" id="beginning-body-text">
+                                Before you came along, days passed by in their usual quiet cadence. But from the moment we first talked, every hour began to carry a spark of warmth I had never felt before.
+                            </p>
+                            <div class="interactive-prompt">
+                                <span class="touch-icon">👆</span> Tap to reveal the secret memory
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-ornament top-ornament">✦ The Secret Reflection ✦</div>
+                            <p class="secret-text" id="beginning-secret-text">
+                                "I still remember the exact conversation, the laugh that caught me off guard, and the quiet realization that my heart had already chosen you."
+                            </p>
+                            <div class="card-date-stamp" id="beginning-timestamp">Preserved Forever in Memory</div>
+                            <button class="btn-flip-back">Turn Back ↺</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 2: LITTLE THINGS -->
+            <div class="story-chapter" id="chapter-little-things">
+                <div class="chapter-header">
+                    <span class="chapter-numeral">Chapter II</span>
+                    <h3 class="chapter-title">The Little Things</h3>
+                    <p class="chapter-subtitle">It's the unspoken, subtle details that make you irreplaceable</p>
+                </div>
+
+                <div class="little-things-grid" id="little-things-grid">
+                    <!-- Populated via CONFIG or HTML fallback -->
+                    <div class="little-card glass-panel" tabindex="0">
+                        <div class="card-icon-halo">🌸</div>
+                        <h4>The Sound of Ahsan's Laughter</h4>
+                        <p>A melody that instantly lights up my darkest days. Hearing you genuinely laugh, Ahsan, is my absolute favorite sound in this universe.</p>
+                        <span class="hover-glow-effect"></span>
+                    </div>
+                    <div class="little-card glass-panel" tabindex="0">
+                        <div class="card-icon-halo">✨</div>
+                        <h4>The Kindness in Your Eyes</h4>
+                        <p>There is an unspoken gentleness in the way you look at the world, Ahsan—a purity of heart that makes everything feel so peaceful.</p>
+                        <span class="hover-glow-effect"></span>
+                    </div>
+                    <div class="little-card glass-panel" tabindex="0">
+                        <div class="card-icon-halo">🌙</div>
+                        <h4>Our Late Night Conversations</h4>
+                        <p>When the whole world is asleep, sharing our innermost thoughts, silly jokes, and quiet vulnerabilities until hours feel like seconds with you, Ahsan.</p>
+                        <span class="hover-glow-effect"></span>
+                    </div>
+                    <div class="little-card glass-panel" tabindex="0">
+                        <div class="card-icon-halo">🕊️</div>
+                        <h4>The Peace You Bring Me</h4>
+                        <p>With you, Ahsan, I never have to wear a mask or pretend. Your presence is the quiet sanctuary my soul was always searching for.</p>
+                        <span class="hover-glow-effect"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 3: BEAUTIFUL MEMORIES -->
+            <div class="story-chapter" id="chapter-memories">
+                <div class="chapter-header">
+                    <span class="chapter-numeral">Chapter III</span>
+                    <h3 class="chapter-title">Beautiful Memories</h3>
+                    <p class="chapter-subtitle">Frames of time etched deep in the starlight of my mind</p>
+                </div>
+
+                <div class="polaroid-gallery" id="polaroid-gallery">
+                    <!-- Memory 1 -->
+                    <div class="polaroid-frame" data-index="0" tabindex="0">
+                        <div class="polaroid-pin"></div>
+                        <div class="polaroid-image-wrapper">
+                            <img src="img/pic (1).jpeg" alt="Under The Same Sky">
+                        </div>
+                        <div class="polaroid-caption">
+                            <h5>Under The Same Sky</h5>
+                            <span class="memory-date" id="memory-date-1">A Quiet Magical Evening</span>
+                            <p class="memory-snippet">"Looking at the sky with Ahsan and realizing no star compared to you."</p>
+                        </div>
+                    </div>
+
+                    <!-- Memory 2 -->
+                    <div class="polaroid-frame" data-index="1" tabindex="0">
+                        <div class="polaroid-pin"></div>
+                        <div class="polaroid-image-wrapper">
+                             <img src="img/pic (2).jpeg" alt="Under The Same Sky">
+                        </div>
+                        <div class="polaroid-caption">
+                            <h5>Those Endless Little Moments</h5>
+                            <span class="memory-date" id="memory-date-2">Golden Hours</span>
+                            <p class="memory-snippet">"Where time stopped, and laughing with Ahsan made everything right."</p>
+                        </div>
+                    </div>
+
+                    <!-- Memory 3 -->
+                    <div class="polaroid-frame" data-index="2" tabindex="0">
+                        <div class="polaroid-pin"></div>
+                        <div class="polaroid-image-wrapper">
+                             <img src="img/pic (3).jpeg" alt="Under The Same Sky">
+                        </div>
+                        <div class="polaroid-caption">
+                            <h5>When Words Weren't Needed</h5>
+                            <span class="memory-date" id="memory-date-3">A Quiet Promise</span>
+                            <p class="memory-snippet">"Just knowing you were there, Ahsan, was all the solace I ever needed."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 4: REASONS WHY -->
+            <div class="story-chapter" id="chapter-reasons">
+                <div class="chapter-header">
+                    <span class="chapter-numeral">Chapter IV</span>
+                    <h3 class="chapter-title">Reasons You Mean So Much</h3>
+                    <p class="chapter-subtitle">A million reasons exist, but here are a few close to my soul</p>
+                </div>
+
+                <div class="reasons-deck-container">
+                    <div class="deck-controls-top">
+                        <span class="reason-counter" id="reason-counter">Reason 1 of 6</span>
+                        <button class="btn-random-reason" id="btn-random-reason" title="Shuffle a random reason">
+                            <span>🎲</span> Surprise Me
+                        </button>
+                    </div>
+
+                    <div class="reason-card-display glass-panel" id="reason-card-display">
+                        <div class="reason-glow-ambient"></div>
+                        <div class="reason-number-badge" id="reason-num-badge">#01</div>
+                        <h4 class="reason-title" id="reason-title">Your Genuine Heart</h4>
+                        <p class="reason-detail" id="reason-detail">
+                            In a world where so many people pretend, you remain effortlessly honest, profoundly caring, and deeply true to who you are.
+                        </p>
+                        <div class="reason-quote-author">✦ Always and Forever ✦</div>
+                    </div>
+
+                    <div class="deck-navigation">
+                        <button class="btn-deck-nav prev" id="btn-reason-prev" aria-label="Previous Reason">← Previous</button>
+                        <div class="deck-progress-dots" id="reason-dots"></div>
+                        <button class="btn-deck-nav next" id="btn-reason-next" aria-label="Next Reason">Next Reason →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAPTER 5: FOREVER MOMENTS -->
+            <div class="story-chapter" id="chapter-forever">
+                <div class="chapter-header">
+                    <span class="chapter-numeral">Chapter V</span>
+                    <h3 class="chapter-title">Forever Moments</h3>
+                    <p class="chapter-subtitle">An unspoken vow written across the constellations</p>
+                </div>
+
+                <div class="forever-vow-card glass-panel">
+                    <div class="vow-heart-icon" id="vow-heart-pulse">
+                        <span class="pulse-ring"></span>
+                        <span class="heart-symbol">♥</span>
+                    </div>
+
+                    <h4 class="vow-heading" id="vow-heading">Hold To Sync Our Heartbeats</h4>
+                    <p class="vow-instruction">Press and hold the glowing heart below</p>
+
+                    <!-- Interactive Hold Button -->
+                    <button class="btn-heartbeat-hold" id="btn-heartbeat-hold">
+                        <span class="hold-progress-fill" id="hold-progress-fill"></span>
+                        <span class="hold-text" id="hold-text">Hold Me Close</span>
+                    </button>
+
+                    <!-- Unlocked Emotional Message -->
+                    <div class="unlocked-vow-message" id="unlocked-vow-message">
+                        <div class="vow-ornament">✧ Eternal Promise ✧</div>
+                        <p class="vow-message-text" id="vow-message-text">
+                            "No matter where life leads us, no matter the distance or how many seasons turn, my fondness, respect, and unconditional love for you will remain constant—like the North Star guiding a sailor home."
+                        </p>
+                        <div class="vow-signature" id="vow-signature">— With all my devotion</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SCENE 5: A LETTER FROM MY HEART           -->
+        <!-- ========================================== -->
+        <section class="scene scene-letter" id="scene-letter">
+            <div class="letter-scene-wrapper">
+                <div class="letter-pre-heading">
+                    <span class="chapter-numeral">A Sacred Confession</span>
+                    <h2 class="letter-main-title">A Letter From My Heart</h2>
+                    <p class="letter-subheading">Crafted in the silence of midnight, meant only for your eyes</p>
+                </div>
+
+                <!-- 3D Realistic Interactive Envelope -->
+                <div class="envelope-stage" id="envelope-stage">
+                    <div class="envelope-wrapper" id="envelope-wrapper">
+                        <!-- Envelope Flap (Top) -->
+                        <div class="envelope-flap" id="envelope-flap"></div>
+                        
+                        <!-- Wax Seal with Heart Emblem -->
+                        <div class="wax-seal" id="wax-seal" role="button" tabindex="0" title="Click to break the wax seal and open the letter">
+                            <div class="wax-seal-inner">
+                                <span class="seal-heart">♥</span>
+                            </div>
+                            <div class="seal-tooltip">Click to Unseal</div>
+                        </div>
+
+                        <!-- Envelope Front Pockets -->
+                        <div class="envelope-pocket-left"></div>
+                        <div class="envelope-pocket-right"></div>
+                        <div class="envelope-pocket-bottom"></div>
+
+                        <!-- The Letter Parchment Inside -->
+                        <div class="parchment-letter" id="parchment-letter">
+                            <div class="parchment-texture"></div>
+                            <div class="parchment-content">
+                                <div class="letter-header-decor">
+                                    <span class="decor-line"></span>
+                                    <span class="decor-crest">✦ ⚜ ✦</span>
+                                    <span class="decor-line"></span>
+                                </div>
+                                <div class="letter-date" id="letter-display-date">In the quiet of our eternity</div>
+                                <div class="letter-greeting" id="letter-display-greeting">My Beloved,</div>
+                                
+                                <div class="letter-body-typewriter" id="letter-body-typewriter">
+                                    <!-- Written dynamically or fallback -->
+                                </div>
+
+                                <div class="letter-closing">
+                                    <p class="closing-phrase">Yours in every breath and lifetime,</p>
+                                    <p class="calligraphy-signature" id="letter-display-signature">Abdul Rehman</p>
+                                    <span class="signature-heart">♥</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="envelope-actions" id="envelope-actions">
+                    <button class="btn-letter-action" id="btn-close-letter" style="display: none;">Fold Letter Back</button>
+                    <button class="btn-celestial btn-to-final" id="btn-to-final" style="display: none;">
+                        <span>Continue to Final Surprise ✦</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SCENE 6: THE FINAL SURPRISE & CLIMAX      -->
+        <!-- ========================================== -->
+        <section class="scene scene-final" id="scene-final">
+            <div class="final-climax-wrapper">
+                
+                <!-- Radiant Constellation Tree / Ethereal Bloom Center -->
+                <div class="celestial-nebula-heart" id="nebula-heart">
+                    <div class="core-glow"></div>
+                    <div class="celestial-particles-burst" id="burst-particles"></div>
+                    <div class="heart-orbit orbit-a"></div>
+                    <div class="heart-orbit orbit-b"></div>
+                    <div class="heart-orbit orbit-c"></div>
+                    <div class="heart-center-glyph">♥</div>
+                </div>
+
+                <div class="final-text-container">
+                    <span class="final-badge">✦ Our Forever Chapter ✦</span>
+                    <h2 class="final-grand-heading" id="final-heading">
+                        You Are My Greatest Blessing
+                    </h2>
+                    <p class="final-message-quote" id="final-message">
+                        "If I had to live a thousand lifetimes, I would search the universe in every single one, just to find you all over again."
+                    </p>
+
+                    <!-- Interactive Starlight Wishes Generator -->
+                    <div class="starlight-wish-box">
+                        <button class="btn-send-wish" id="btn-send-wish">
+                            <span class="wish-icon">✨</span>
+                            <span class="wish-text">Send Starlight Wish</span>
+                        </button>
+                        <p class="wish-counter-text" id="wish-counter-text">Wishes cast into our galaxy: <span id="wish-count">0</span></p>
+                    </div>
+
+                    <!-- Emotional Time Journey Counter -->
+                    <div class="eternity-counter-card glass-panel" id="eternity-card">
+                        <div class="counter-label">Days We Have Cherished This Bond</div>
+                        <div class="counter-digits" id="counter-digits">
+                            <div class="time-unit"><span class="unit-val" id="time-days">--</span><span class="unit-lbl">Days</span></div>
+                            <div class="time-unit"><span class="unit-val" id="time-hours">--</span><span class="unit-lbl">Hours</span></div>
+                            <div class="time-unit"><span class="unit-val" id="time-minutes">--</span><span class="unit-lbl">Minutes</span></div>
+                            <div class="time-unit"><span class="unit-val" id="time-seconds">--</span><span class="unit-lbl">Seconds</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Special Climax Trigger for Ahsan -->
+                    <div class="special-climax-trigger-box">
+                        <button class="btn-celestial btn-final-confession" id="btn-final-confession">
+                            <span class="btn-glow-ring"></span>
+                            <span class="btn-content">
+                                <span class="btn-icon">💖</span>
+                                <span class="btn-text">One Last Secret Just For You, Ahsan</span>
+                                <span class="btn-icon">💖</span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <!-- Experience Navigation Footer -->
+                    <div class="final-cta-group">
+                        <button class="btn-replay" id="btn-replay-experience">
+                            <span>↺ Replay Our Journey</span>
+                        </button>
+                        <button class="btn-ambient-mode" id="btn-ambient-mode">
+                            <span>🌌 Ambient Stargaze Mode</span>
+                        </button>
+                    </div>
+
+                    <footer class="romantic-footer">
+                        <p>Designed with eternal devotion for <span class="footer-name" id="footer-recipient">Ahsan</span></p>
+                    </footer>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Memory Spotlight Modal for Polaroid Details -->
+    <div class="memory-modal" id="memory-modal">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-card glass-panel">
+            <button class="btn-modal-close" id="btn-modal-close" aria-label="Close Modal">✕</button>
+            <div class="modal-icon-badge" id="modal-icon">🌌</div>
+            <h3 class="modal-title" id="modal-title">Memory Title</h3>
+            <span class="modal-date" id="modal-date">Date</span>
+            <div class="modal-divider"></div>
+            <p class="modal-story" id="modal-story">Memory detailed story goes here...</p>
+        </div>
+    </div>
+
+    <!-- Grand Climax Overlay: I LOVE YOU Ahsan -->
+    <div class="Ahsan-love-overlay" id="Ahsan-love-overlay">
+        <div class="love-overlay-backdrop" id="love-overlay-backdrop"></div>
+        <div class="love-overlay-card glass-panel">
+            <button class="btn-close-love-overlay" id="btn-close-love-overlay" aria-label="Close">✕</button>
+            <div class="love-crest">
+                <span class="crest-sparkle">✦</span>
+                <span class="crest-heart">💖</span>
+                <span class="crest-sparkle">✦</span>
+            </div>
+            <p class="love-subtitle">With every beat of my heart, today and forever...</p>
+            <h1 class="love-giant-heading">I LOVE YOU, Ahsan</h1>
+            <p class="love-promise-text">
+                "In a universe of billions of souls, you are my home, my peace, and my greatest blessing. No matter what tomorrow brings, my heart belongs to you."
+            </p>
+            <div class="love-signature-decor">
+                <span class="love-sig-text">— Forever Devoted, Abdul Rehman</span>
+                <span class="love-heart-pulse">♥</span>
+            </div>
+            
+            <div class="love-audio-indicator">
+                <span class="audio-note-spin">🎵</span>
+                <span id="climax-audio-name">Playing Our Special Song</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+
